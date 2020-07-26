@@ -1,0 +1,69 @@
+
+
+<nav dir="ltr" class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand waves-effect" href="/">
+        <img src="https://www.upsara.com/images/p629457_.png" alt="Damirco" style="width: 140px;">
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          {% comment %} <li class="nav-item active">
+            <a class="nav-link waves-effect" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="/checkout">
+            Checkout</a>
+          </li> {% endcomment %}
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a href="{% url 'user-page' %}" class="nav-link waves-effect">
+
+
+              <span class="clearfix d-none d-sm-inline-block"> سفارش </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'logout' %}">
+              <span class="clearfix d-none d-sm-inline-block"> خروج </span>
+            </a>
+          </li>
+           <li class="nav-item">
+          <a class="nav-link waves-effect" href="{% url 'user-page' %}">
+              <span class="clearfix d-none d-sm-inline-block"> مشاهده سفارشات </span>
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'login' %}">
+              <span class="clearfix d-none d-sm-inline-block"> وارد شدن </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="{% url 'register' %}">
+              <span class="clearfix d-none d-sm-inline-block"> ثبت نام </span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+  </nav>

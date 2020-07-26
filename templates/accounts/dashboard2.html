@@ -1,0 +1,69 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+{%  include 'accounts/status.html' %}
+<br>
+
+ <div class="row">
+ <h5>۵ سفارش آخر</h5>
+     <hr>
+    <div class="col-md-12">
+        {% for order in orders %}
+       <div class="card">
+            {% if order.confirmed %}
+           <h5 class="bg-success card-header">{{ order.product }}   توسط   {{ order.customer.name }}<a class="float-right bg-warning ">تایید شده</a> </h5>
+            {% else %}
+           <h5 class="card-header">{{ order.product }}   توسط   {{ order.customer.name }}</h5>
+            {% endif %}
+           <div class="card-body">
+           <h5 class="card-title">{{order.customer.name}}</h5>
+               <p class="card-text">
+                <p class="m-5 d-inline">محصول:<a class="text-muted">{{ order.product }}</a></p>
+                <p class="m-5 d-inline">سفارش دهنده: <a class="text-muted">{{ order.customer.name }}</a></p>
+                {% if order.confirmed %}
+                <p class="m-5 d-inline">شماره تلفن:  <a class="text-muted">{{ order.customer.phone }}</a></p>
+                {% else %}
+                <p class="m-5 d-inline">شماره تلفن:  <a class="text-muted">برای نمایش سفارش را تایید کنید</a></p>
+                {% endif %}
+               </p>
+
+
+            <a class="m-1 float-right btn btn-primary text-white" data-toggle="collapse" href="#collapseExample{{order.id}}">جزییات</a>
+            <a class="m-1 float-right btn btn-danger text-white">حذف</a>
+            {% if order.confirmed %}
+            {% else %}
+            <a class="m-1 float-right btn btn-success" data-toggle="modal" data-target="#exampleModal">تایید</a>
+           </div>
+       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">مشتری گرامی</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                با کلیک بر روی تایید شما با قوانین ما موافقت میکنید
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">رد</button>
+                                <a class="btn btn-success" href="{% url "confirm-order" order.id %}">تایید</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+            {% endif %}
+
+        </div>
+<!---collapsible div--->
+                    <div class="collapse" id="collapseExample{{ order.id }}">
+                        <div class="card card-body">
+                            {{ order.note }}
+                        </div>
+                    </div>
+        {% endfor %}
+    </div>
+ </div>
+{% endblock content %}

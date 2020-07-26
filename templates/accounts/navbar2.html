@@ -1,0 +1,44 @@
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #000000;
+    margin-right: 20px;
+  }
+</style>
+
+<nav  dir="ltr" class="navbar navbar-expand-lg navbar-light bg-light">
+ <a class="navbar-brand waves-effect" href="/">
+        <img src="https://www.upsara.com/images/p629457_.png" alt="Damirco" style="width: 140px;">
+      </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      {% if request.user.is_staff %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">پنل کاربری</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products' %}">محصولات</a>
+      </li>
+      {% endif %}
+      {% if group == 'admin' %}
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'customer-pag' %}">مشتریان شما</a>
+      </li>
+          {% else %}
+          <li class="nav-item">
+          <a class="nav-link" href="#"> شما</a>
+      </li>
+        {% endif %}
+    </ul>
+  </div>
+
+  <span class="hello-msg alert-dark"><a class="hello-msg ">{{request.user.username}}</a>خوش آمدید </span>
+  <span ><a  class="hello-msg " href="{% url 'logout' %}">خروج</a></span>
+
+</nav>
