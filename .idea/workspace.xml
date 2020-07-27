@@ -11,8 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04b86010-a121-49f2-ae33-e754d1c9787d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/dashboard2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/dashboard2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/navbar2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/navbar2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +108,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="434" y="27" width="488" height="727" key="RollbackChangesDialog" timestamp="1595789087052">
+      <screen x="64" y="27" width="1302" height="741" />
+    </state>
+    <state x="434" y="27" width="488" height="727" key="RollbackChangesDialog/64.27.1302.741@64.27.1302.741" timestamp="1595789087052" />
     <state x="347" y="8" width="672" height="676" key="search.everywhere.popup" timestamp="1595751001568">
       <screen x="64" y="27" width="1302" height="741" />
     </state>

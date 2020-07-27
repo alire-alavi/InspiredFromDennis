@@ -12,19 +12,28 @@
         {% for order in orders %}
        <div class="card">
             {% if order.confirmed %}
-           <h5 class="bg-success card-header">{{ order.product }}   توسط   {{ order.customer.name }}<a class="float-right bg-warning ">تایید شده</a> </h5>
+           <h5 class="bg-success card-header">{{ order.product }}   توسط   {{ order.customer.gender }} {{ order.customer.nachname }}<a class="float-right bg-warning ">تایید شده</a> </h5>
             {% else %}
-           <h5 class="card-header">{{ order.product }}   توسط   {{ order.customer.name }}</h5>
+           <h5 class="bg-secondary text-white card-header">{{ order.product }}   توسط   {{ order.customer.gender }}  {{ order.customer.nachname }}</h5>
             {% endif %}
            <div class="card-body">
            <h5 class="card-title">{{order.customer.name}}</h5>
                <p class="card-text">
                 <p class="m-5 d-inline">محصول:<a class="text-muted">{{ order.product }}</a></p>
-                <p class="m-5 d-inline">سفارش دهنده: <a class="text-muted">{{ order.customer.name }}</a></p>
+                <p class="m-5 d-inline">سفارش دهنده: <a class="text-muted">{{ order.customer.nachname }}</a></p>
                 {% if order.confirmed %}
                 <p class="m-5 d-inline">شماره تلفن:  <a class="text-muted">{{ order.customer.phone }}</a></p>
                 {% else %}
                 <p class="m-5 d-inline">شماره تلفن:  <a class="text-muted">برای نمایش سفارش را تایید کنید</a></p>
+                {% endif %}
+               </p>
+               <p class="card-text">
+                <p class="m-5 d-inline">استان: <a class="text-muted">{{ order.customer.province }}</a></p>
+                <p class="m-5 d-inline">سفارش دهنده: <a class="text-muted">{{ order.customer.forname }}  {{ order.customer.nachname }}</a></p>
+                {% if order.confirmed %}
+                <p class="m-5 d-inline">نام شرکت:   <a class="text-muted">{{ order.customer.GmBH }}</a></p>
+                {% else %}
+                <p class="m-5 d-inline">نام شرکت:   <a class="text-muted">برای نمایش سفارش را تایید کنید</a></p>
                 {% endif %}
                </p>
 

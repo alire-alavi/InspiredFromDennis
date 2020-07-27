@@ -26,15 +26,15 @@
         <a class="nav-link" href="{% url 'products' %}">محصولات</a>
       </li>
       {% endif %}
-      {% if group == 'admin' %}
-      <li class="nav-item">
-          <a class="nav-link" href="{% url 'customer-pag' %}">مشتریان شما</a>
-      </li>
-          {% else %}
-          <li class="nav-item">
-          <a class="nav-link" href="#"> شما</a>
-      </li>
-        {% endif %}
+{#      {% if group == 'admin' %}#}
+{#      <li class="nav-item">#}
+{#          <a class="nav-link" href="{% url 'customer-pag' %}">مشتریان شما</a>#}
+{#      </li>#}
+{#          {% else %}#}
+{#          <li class="nav-item">#}
+{#          <a class="nav-link" href="#"> شما</a>#}
+{#      </li>#}
+{#        {% endif %}#}
     </ul>
   </div>
 
